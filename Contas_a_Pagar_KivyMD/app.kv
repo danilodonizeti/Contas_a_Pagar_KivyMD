@@ -1,0 +1,64 @@
+<App@MDFloatLayout>:
+
+    MDToolbar:
+        title: 'CONTAS A PAGAR'
+        pos_hint:{"center_x":0.5, "center_y":0.95}
+
+    MDTextField:
+        id: credor
+        pos_hint:{"center_x":0.5, "center_y":0.7}
+        size_hint_x:0.4
+        mode: "rectangle"
+        hint_text:"Credor"
+        max_text_length: 30
+        elevation: 18
+
+    MDTextField:
+        id: descricao
+        pos_hint:{"center_x":0.5, "center_y":0.6}
+        size_hint_x:0.4
+        mode: "rectangle"
+        hint_text:"Descrição"
+        max_text_length: 50
+        elevation: 18
+
+    MDTextField:
+        id: parcela
+        pos_hint:{"center_x":0.5, "center_y":0.5}
+        size_hint_x:0.4
+        mode: "rectangle"
+        hint_text:"Número da Parcela"
+        elevation: 18
+
+    MDTextField:
+        id: valor
+        pos_hint:{"center_x":0.5, "center_y":0.4}
+        size_hint_x:0.4
+        mode: "rectangle"
+        hint_text:"Valor"
+        required: True
+        helper_text: "Campo obrigatório"
+        helper_text_mode: "persistent"
+        elevation: 18
+
+    MDTextField:
+        id: vencimento
+        pos_hint:{"center_x":0.5, "center_y":0.3}
+        size_hint_x:0.4
+        mode: "rectangle"
+        hint_text:"Vencimento"
+        required: True
+        helper_text: "Campo obrigatório"
+        helper_text_mode: "persistent"
+        elevation: 18
+
+    MDRaisedButton:
+        id: salvar
+        pos_hint:{"center_x":0.5, "center_y":0.2}
+        size_hint_x:0.4
+        text: "Salvar"
+        md_bg_color: 0, 0, 1, 1
+        elevation: 18
+        on_release: app.lancar_novo(vencimento.text, credor.text, descricao.text, parcela.text, valor.text)
+
+App
